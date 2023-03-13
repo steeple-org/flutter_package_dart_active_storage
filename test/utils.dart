@@ -30,15 +30,13 @@ Future startServer() {
         response.statusCode = 200;
         response.headers.set('Content-Type', 'application/json; charset=utf-8');
         var responseData = {
-          'id': 153,
-          'key': 'zcYSmqkyKqJH6Mez7WJAcuJ8',
           'filename': 'avalon.jpg',
           'content_type': 'image/jpeg',
           'metadata': {},
           'byte_size': 88037,
           'checksum': 'BdXPe8f6bkr3J4PcnYgnxw==',
           'created_at': '2019-06-12T15:41:29.105Z',
-          'signed_id':
+          'signedId':
               'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWms9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e9e436de22c082cd1142a42ea29daa7eaf5df97d',
           'direct_upload': {
             'url': '$serverUrl/file-upload',

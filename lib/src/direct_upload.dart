@@ -5,15 +5,11 @@ import 'exceptions.dart';
 typedef ProgressCallback = void Function(double progressPercent);
 
 class DirectUploadResponse {
-  final int id;
-  final String key;
   final String signedId;
   final String uploadUrl;
   final Map<String, String> headers;
 
   DirectUploadResponse({
-    required this.id,
-    required this.key,
     required this.signedId,
     required this.uploadUrl,
     required this.headers,
@@ -23,9 +19,7 @@ class DirectUploadResponse {
     try {
       var parsed = json.decode(utf8Text);
       return DirectUploadResponse(
-        id: parsed['id'],
-        key: parsed['key'],
-        signedId: parsed['signed_id'],
+        signedId: parsed['signedId'],
         uploadUrl: parsed['direct_upload']['url'],
         headers: Map<String, String>.from(parsed['direct_upload']['headers']),
       );

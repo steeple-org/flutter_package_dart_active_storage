@@ -13,8 +13,6 @@ void main() {
         var uploader = Uploader('$serverUrl/direct-upload');
         return uploader.directUpload(directUploadRequestSample);
       }).then((DirectUploadResponse responseData) {
-        expect(responseData.id, 153);
-        expect(responseData.key, 'zcYSmqkyKqJH6Mez7WJAcuJ8');
         expect(
           responseData.signedId,
           'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWms9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e9e436de22c082cd1142a42ea29daa7eaf5df97d',
@@ -104,16 +102,12 @@ DirectUploadRequest get directUploadRequestSample => DirectUploadRequest(
     );
 
 DirectUploadResponse get correctDirectUploadResponse => DirectUploadResponse(
-      id: 153,
-      key: 'zcYSmqkyKqJH6Mez7WJAcuJ8',
       signedId: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWms9IiwiZXhwIjpudWxsL',
       uploadUrl: '$serverUrl/file-upload',
       headers: {'Content-MD5': 'BdXPe8f6bkr3J4PcnYgnxw=='},
     );
 
 DirectUploadResponse get wrongDirectUploadResponse => DirectUploadResponse(
-      id: 153,
-      key: 'zcYSmqkyKqJH6Mez7WJAcuJ8',
       signedId: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWms9IiwiZXhwIjpudWxsL',
       uploadUrl: '$serverUrl/error',
       headers: {'Content-MD5': 'BdXPe8f6bkr3J4PcnYgnxw=='},
